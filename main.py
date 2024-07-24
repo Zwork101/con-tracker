@@ -48,7 +48,7 @@ for actor in roles:
 		if data not in previous_events:
 			print(f"{actor} is at {event_name} in {location} on {date}")
 			if not skip_updates:
-				requests.post(endpoint, data=f"{actor} is at {event_name} in {location} on {date}")
+				requests.post(endpoint, data=f"{actor} is at {event_name} in {location} on {date}".encode('utf-8'))
 			previous_events.append(data)
 
 	time.sleep(6)
