@@ -54,7 +54,7 @@ for actor in roles:
 	time.sleep(6)
 
 if event_counter < len(previous_events):
-	requests.post(endpoint, data=f"Warning: {previous_events} events recorded, only found {event_counter} events")
+	requests.post(endpoint, data=f"Warning: {previous_events} events recorded, only found {event_counter} events".encode('utf-8'))
 
 with open(save_file, "w", newline='') as f:
 	writer = csv.DictWriter(f, fieldnames=["actor", "date", "event", "location"])
